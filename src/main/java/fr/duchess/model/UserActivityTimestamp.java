@@ -12,7 +12,7 @@ public class UserActivityTimestamp implements Serializable {
 
     @PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.PARTITIONED)
     @NotNull
-    private String userID;
+    private String user_id;
 
     @PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.PARTITIONED)
     @NotNull
@@ -25,18 +25,18 @@ public class UserActivityTimestamp implements Serializable {
         //default constructor
     }
 
-    public UserActivityTimestamp(String userID, String activity, Long timestamp) {
-        this.userID = userID;
+    public UserActivityTimestamp(String user_id, String activity, Long timestamp) {
+        this.user_id = user_id;
         this.activity = activity;
         this.timestamp = timestamp;
     }
 
-    public String getUserID() {
-        return userID;
+    public String getUser_id() {
+        return user_id;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
     public String getActivity() {

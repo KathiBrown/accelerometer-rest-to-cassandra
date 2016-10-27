@@ -8,8 +8,8 @@ CREATE TABLE acceleration (
   x double,
   y double,
   z double,
-  PRIMARY KEY (user_id, timestamp)
-);
+  PRIMARY KEY (user_id, timestamp))
+  with clustering order by (timestamp desc);
 
 CREATE TABLE training (
   user_id text,
@@ -22,19 +22,20 @@ CREATE TABLE training (
 );
 
 CREATE TABLE trainingAcceleration (
-  userID text,
+  user_id text,
   activity text,
   timestamp bigint,
   x double,
   y double,
   z double,
-  PRIMARY KEY ((userid, activity), timestamp)
+  PRIMARY KEY ((user_id, activity), timestamp)
 );
 
 CREATE TABLE result (
   user_id text,
   timestamp bigint,
   prediction text,
-  PRIMARY KEY (user_id, timestamp)
+  PRIMARY KEY (user_id, timestamp))
+  with clustering order by (timestamp desc);
 );
 

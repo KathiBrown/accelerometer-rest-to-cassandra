@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 @RestController
 @RequestMapping("/acceleration")
 public class AccelerationController {
@@ -50,7 +52,8 @@ public class AccelerationController {
 
         StringBuilder builder = new StringBuilder("<header><META HTTP-EQUIV=\"refresh\" CONTENT=\"5\"></header>");
         builder.append("<body><div>*****************************************************************************************</div>");
-        builder.append("<div>            Predicted activity = " + prediction.getPrediction() + "</div>");
+        builder.append("<div><font size=\"6\">            Predicted activity = " + prediction.getPrediction() + "</font></div>");
+        builder.append("<div>            Saved at " + new Date(prediction.getUserTimestamp().getTimestamp()) + "</div>");
         builder.append("<div>*****************************************************************************************</div>");
         builder.append("<div>*****************************************************************************************</div><body>");
 

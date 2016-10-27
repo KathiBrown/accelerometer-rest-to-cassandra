@@ -9,7 +9,7 @@ import org.springframework.data.cassandra.config.CassandraClusterFactoryBean;
 import org.springframework.data.cassandra.config.java.AbstractCassandraConfiguration;
 
 @Configuration
-@PropertySource(value = { "classpath:cassandra.properties" })
+//@PropertySource(value = { "classpath:cassandra.properties" })
 public class CassandraConfiguration extends AbstractCassandraConfiguration {
 
     @Autowired
@@ -18,13 +18,17 @@ public class CassandraConfiguration extends AbstractCassandraConfiguration {
     @Bean
     public CassandraClusterFactoryBean cluster() {
         CassandraClusterFactoryBean cluster = new CassandraClusterFactoryBean();
-        cluster.setContactPoints(environment.getProperty("cassandra.contactpoints"));
-        cluster.setPort(Integer.parseInt(environment.getProperty("cassandra.port")));
+        //cluster.setContactPoints(environment.getProperty("cassandra.contactpoints"));
+        //cluster.setPort(Integer.parseInt(environment.getProperty("cassandra.port")));
+        cluster.setContactPoints("127.0.0.1");
+        cluster.setPort(9042);
         return cluster;
     }
 
     @Override
     protected String getKeyspaceName() {
-        return environment.getProperty("cassandra.keyspace");
+
+        //return environment.getProperty("cassandra.keyspace");
+        return "activityrecognition";
     }
 }
