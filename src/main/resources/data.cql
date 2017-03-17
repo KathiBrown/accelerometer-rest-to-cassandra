@@ -1,6 +1,6 @@
-CREATE KEYSPACE accelerations WITH replication = {'class':'SimpleStrategy', 'replication_factor':1};
+CREATE KEYSPACE activityrecognition WITH replication = {'class':'SimpleStrategy', 'replication_factor':1};
 
-USE accelerations;
+USE activityrecognition;
 
 CREATE TABLE acceleration (
   user_id text,

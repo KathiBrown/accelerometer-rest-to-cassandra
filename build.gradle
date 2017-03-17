@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
     }
 }
 
@@ -25,15 +25,9 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:1.2.3.RELEASE") {
-        exclude module: "spring-boot-starter-tomcat"
-    }
-    compile("org.springframework.boot:spring-boot-starter-jetty:1.2.3.RELEASE")
-    compile("org.springframework.boot:spring-boot-starter-actuator:1.2.3.RELEASE")
-    compile("org.springframework.data:spring-data-cassandra:1.2.0.RELEASE")
-    testCompile("junit:junit")
-}
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-actuator:1.5.2.RELEASE")
+    compile("org.springframework.data:spring-data-cassandra:1.5.1.RELEASE")
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+    testCompile("junit:junit")
 }
